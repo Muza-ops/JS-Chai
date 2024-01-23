@@ -1,19 +1,416 @@
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
-    <thead style="background-color: #333; color: #fff;">
-      <tr>
-        <th style="padding: 15px;">Column 1</th>
-        <th style="padding: 15px;">Column 2</th>
-        <!-- Add more headers if needed -->
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in collection %}
-        <tr style="background-color: {{ cycle('#ffffff', '#f9f9f9') }}; transition: background-color 0.3s;">
-          <td style="padding: 10px;">{{ item.property1 }}</td>
-          <td style="padding: 10px;">{{ item.property2 }}</td>
-          <!-- Add more cells if needed -->
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Responsive Table HTML and CSS Only</title>
+
+</head>
+    
+    
+    <style>
+    /* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+      text-align: left;
+    padding: 8px;
+}
+
+.fl-table td {
+    border: 1px solid #e9e9e9;
+    font-size: 14px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background:#CC9900;
+}
+.blue {
+
+    background:#1BBDC7;
+}
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+    
   
+    </style>
+    
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Ref</th>
+            <th>Purpose for processing</th>
+            <th>Necessary for Performance of Contract</th>
+            <th>Necessary to comply with a Legal Obligation</th>
+            <th>Legitimate Interest</th>
+            <th>What is the Company's Legitimate Interest</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>(a)</td>
+            <td>Recruitment and selection</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+             <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in fully assessing applications for employment to ensure only suitable and appropriate candidates are both assessed and selected, so that the Company identifies the right people for its business who will be able to contribute to its operations and to the culture.
+
+</td>
+        </tr>
+        <tr>
+            <td>(b)</td>
+            <td>Recruitment and selection</td>
+             <td></td>
+             <td class="blue"> Y</td>
+             <td class="blue"> Y</td>
+             <td>
+                The Company considers it has a legitimate interest in managing its business operations in the most effective way and needs to make decisions relating to the future of its business in order to preserve its business operations or grow its business, including the interests of the workforce as a whole and the Company customer base.</td>
+           
+        </tr>
+        <tr>
+            <td>(c)</td>
+            <td>Providing and administering remuneration, benefits, pension and incentive schemes and reimbursement of business costs and expenses and making appropriate tax and social security and other deductions and contributions as required;</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+             <td>The Company considers it has a legitimate interest in managing its workforce and operating its business, including ensuring that employees are properly remunerated and that remuneration is set an appropriate level and in undertaking normal business operations.</td>
+        </tr>
+        <tr>
+            <td>(d)</td>
+            <td>
+                Allocating and managing duties and responsibilities and the business activities to which they relate, including business travel;</td>
+                <td class="blue"> Y</td>
+                <td></td>
+                <td class="blue"> Y</td>
+               
+             <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including ensuring each employee undertakes appropriate duties, is properly trained and undertakes their role correctly and in accordance with appropriate procedures and in undertaking normal business operations.</td>
+        </tr>
+        <tr>
+            <td>(e)</td>
+            <td>
+                Identifying and communicating effectively with employees;</td>
+                <td class="blue"> Y</td>
+                <td></td>
+                <td class="blue"> Y</td>
+           
+             <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including undertaking normal business operations and maintaining a dialogue with employees.</td>
+        </tr>
+        <tr>
+            <td>(f)</td>
+            <td>
+                Managing and operating appraisals, conduct, performance, capability, absence and grievance related reviews, allegations, complaints, investigations and processes and other informal and formal HR processes and making related management decisions;</td>
+                <td class="blue"> Y</td>
+                <td class="blue"> Y</td>
+                <td class="blue"> Y</td>
+           
+              <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including ensuring each employee undertakes appropriate duties, is properly trained and undertakes their role correctly and in accordance with appropriate procedures. It also includes addressing and resolving employee related concerns and issues and complying with applicable laws and regulations.</td>
+        </tr>
+        <tr>
+            <td>(g)</td>
+            <td>
+                Training, development, promotion, career, talent management and succession planning and business contingency planning;</td>
+                <td class="blue"> Y</td>
+                <td class="blue"> Y</td>
+                <td class="blue"> Y</td>
+             <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including ensuring that each employee undertakes appropriate duties, is properly trained and undertakes their roles correctly and in accordance with appropriate procedures.</td>
+        </tr>
+        <tr>
+            <td>(h)</td>
+            <td>
+
+                Consultations or discussions with representatives of employees;</td>
+                <td class="blue"> Y</td>
+                <td class="blue"> Y</td>
+                <td class="blue"> Y</td>
+             <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including undertaking normal business operations and maintaining a dialogue with employees and complying with applicable laws and regulations.</td>
+        </tr>
+        <tr>
+            <td>(i)</td>
+            <td>
+                Conducting statutory reporting and surveys for benchmarking, identifying improved ways of working, employee relations and engagement at work (these will often be anonymous but may include profiling data such as age and gender to support analysis of results);</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+             <td>The Company considers it has a legitimate interest in managing its workforce and operating its business. This includes ensuring that each employee undertakes appropriate duties, is properly trained and undertakes their roles correctly and in accordance with appropriate procedures, undertaking normal business operations and maintaining a dialogue with employees, ensuring that employees are properly remunerated and that this remuneration is set an appropriate level and complying with applicable laws and regulations. The Company has a legitimate interest in seeking the views of its workforce and giving them the opportunity to raise concerns or suggest improvements. Effective employee engagement helps ensure the Company makes the best decisions for the business and is important to attract and
+                retain high calibre employees. This will support the Company to achieve its immediate and long-term business goals and outcomes.</td>
+        </tr>
+        <tr>
+            <td>(j)</td>
+            <td>Processing information about absence or medical information regarding physical or mental health or condition in order to: assess eligibility for remuneration and benefits related to health, sickness absence and long-term incapacity; determine fitness for work; facilitate a return to work; make adjustments or accommodations to duties or the workplace; make management decisions regarding employment or engagement or continued employment or engagement or redeployment; and conduct related management processes;</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including ensuring each employee undertakes appropriate duties, is properly trained and undertakes their roles correctly and in accordance with appropriate procedures and managing employee absence and leave entitlements.
+                The Company considers that it has a legitimate interest in managing health and safety risk and operating its business. This includes supporting the welfare of employees and taking steps to identify and mitigate risks to employees’ health, safety or welfare, ensure fitness for work and to manage absence and incapacity impacting on the ability of</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>employees to perform their roles.
+                
+                Effective support and management of employees supports business performance and the attraction and retention of high calibre employees. This supports the Company's immediate and long-term business goals and outcomes.</td>
+        </tr>
+        <tr>
+            <td>(k)</td>
+            <td>
+                For planning, managing and carrying out restructuring or redundancies or other change programmes including appropriate consultation, selection, alternative employment searches and related management decisions;</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its business operations in the most effective way. The Company needs to make decisions relating to the future of its business in order to preserve its business operations or grow its business. These interests include the interests of the workforce as a whole and the Company customer base.</td>
+        </tr>
+        <tr>
+            <td>(l)</td>
+            <td>
+                Complying with reference requests where the Company is named by the individual as a referee;</td>
+            <td></td>    
+            <td></td>  
+            <td class="blue"> Y</td>
+            <td>The Company considers it is in the legitimate interests of a new employer to receive confirmation of employment details from the Company for the purposes of confirming the former employee's employment history.</td>
+
+        </tr>
+        <tr>
+            <td>(m)</td>
+            <td>Operating email, IT, internet, social media, HR related and other company policies and procedures. To the extent permitted by applicable laws, the Company carries out monitoring of the Company's IT systems to protect and maintain the integrity of the Company's IT systems and infrastructure; to ensure compliance with the Company's IT policies and to locate information through searches where needed for a legitimate business purpose;</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its workforce and operating its business. The IT function is essential to ensuring that this can be carried out in the most effective way. This includes maintaining the integrity and security of data and facilitating records management.</td>
+        </tr>
+
+        <tr>
+            <td>(n)</td>
+            <td>Satisfying its regulatory obligations to supervise the persons employed or appointed by it to conduct business on its behalf, including preventing, detecting and investigating a wide range of activities and behaviours, whether relating to specific business dealings or to the workplace generally and liaising with regulatory authorities;</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>
+                The Company considers it has a legitimate interest in ensuring that its business, clients, employees and systems are protected including detecting and preventing crimes or criminal activity; ensuring only appropriate employees are engaged in our business; and ensuring compliance with export control and other legal requirements placed upon us (both by EU and non-EU laws).</td>
+        </tr>
+        <tr>
+            <td>(o)</td>
+            <td>Protecting the private, confidential and proprietary information of the Company, its employees, its clients and third parties;</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in ensuring that its business, clients, employees and systems are protected including protecting our assets and the integrity of our systems, detecting and preventing loss of our confidential information and proprietary information.</td>
+        </tr>
+
+        <tr>
+             <td>(p)</td>
+             <td>Complying with applicable laws and regulation (for example maternity or parental leave legislation, working time and health and safety legislation, taxation rules, worker consultation requirements, other employment laws and regulation to which the Company is subject in the conduct of its business);</td>
+             <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers that it has a legitimate interest in managing its workforce and operating its business. This includes ensuring that each employee undertakes appropriate duties, is properly trained and undertakes their roles correctly and in accordance with appropriate procedures. It is also necessary to undertake normal business operations and maintain a dialogue with employees and comply with applicable laws and regulations.</td>    
+        </tr>
+
+        <tr>
+            <td>(q)</td>
+            <td>Monitoring programmes to ensure equality of opportunity and diversity with regard to personal characteristics protected under applicable anti-discrimination laws;</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>
+                The Company considers it has legitimate interests in ensuring that it takes action to prevent discrimination and promote an inclusive and diverse workplace.</td>
+        </tr>
+
+        <tr>
+            <td>(r)</td>
+            <td>Planning, due diligence and implementation in relation to a commercial transaction or service transfer involving the Company that impacts on your relationship with the Company for example mergers and acquisitions or a transfer of your employment under applicable automatic transfer rules;</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its business operations in the most effective way. The Company needs to make decisions relating to the future of its business in order to preserve its business operations or grow its business. These interests include the interests of the workforce as a whole and the Company customer base.
+                In the event that the Company makes a decision to outsource a function or acquire or transfer a business or part of a business the Company and the third party with whom the Company is seeking to transact each have a legitimate interest in ensuring that the workforce, employee costs and liabilities are sufficiently understood prior to committing to the transaction and to ensure a smooth transition of employees if a transaction goes ahead.
+                Business change programmes and transformation support business continuity and improvement and support the Company in achieving its long-term business goals and outcomes.</td>
+
+        </tr>
+
+        <tr>
+            <td>(s)</td>
+            <td>For business operational and reporting documentation such as management and headcount reporting, the preparation of annual reports or tenders for work or client team records including the use of photographic images;</td>
+            <td class="blue"> Y</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including ensuring each employee undertakes appropriate duties and undertaking normal business operations.</td>
+        </tr>
+
+        <tr>
+            <td>(t)</td>
+            <td>To operate the relationship with third party customer and suppliers including the disclosure of relevant vetting information in line with the appropriate requirements of customers to those customers, contact or professional CV details or photographic images for identification to clients or disclosure of information to data processors for the provision of services to the Company;</td>
+            <td class="blue"> Y</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including ensuring each employee undertakes appropriate duties and undertaking normal business operations.
+                This includes the sharing of appropriate information with existing and prospective customers and suppliers about who is or will be working with them in order to develop strong relationships and support the effective performance of commitments with customers and suppliers.
+                In some cases this may also include supporting customers and suppliers to comply with their legal or regulatory obligations or security requirements by having sufficient information about those providing services to them.
+                The Company also has a legitimate interest in ensuring that it can engage with customers and suppliers effectively and that they can access the information they need to provide the service for which they have been engaged.</td>
+        </tr>
+        <tr>
+            <td>(u)</td>
+            <td> Where relevant for publishing appropriate internal or external communications or publicity material (including photographic images) via the Company website, social media and other publicity and communication channels in appropriate circumstances;</td>
+            <td class="blue"> Y</td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td>The Company has a legitimate interest in communicating effectively with its workforce, customers, its audience and other stakeholders as well as carrying out appropriate business development activity.
+                That includes giving information to the workforce or, where appropriate customers, our audience, other stakeholders or the wider market about relevant business activities, plans or projects.
+                That can include making reference to those of our employees who are involved in the relevant matters being communicated above.
+                Effective employee, and other stakeholder communication and engagement contributes to attraction and retention of high calibre employees, development and retention of customer relationships, audience engagement and participation, strong business performance,</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>business growth and maintaining and enhancing the Company's reputation. This supports the Company's immediate and long-term business goals and outcomes.</td>
+        </tr>
+
+        <tr>
+            <td>(v)</td>
+            <td>To support HR administration and management and maintaining and processing general records necessary to manage the employment, worker or other relationship and operate the contract of employment or engagement;</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its workforce and operating its business including ensuring that each employee undertakes appropriate duties, is properly trained and undertakes their roles correctly and in accordance with appropriate procedures; managing employee absence and leave entitlements; undertaking normal business operations; maintaining a dialogue with employees; and complying with applicable laws and regulations.</td>
+        </tr>
+
+        <tr>
+            <td>(w)</td>
+            <td>To change access permissions;</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its workforce and operating its business. The IT function is essential to ensuring this can be carried out in the most effective way including complying with the Company policies and access controls.</td>
+        </tr>
+
+        <tr>
+            <td>(x)</td>
+            <td>To provide technical support and maintenance for HR information systems;</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in managing its workforce and operating its business. The IT function is essential to ensuring that this can be carried out in the most effective way including maintaining the integrity and security of data and facilitating records management.</td>
+        </tr>
+
+        <tr>
+            <td>(y)</td>
+            <td>To enforce our legal rights and obligations, and for any purposes in connection with any legal claims made by, against or otherwise involving you;</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in protecting its organisation from breaches of legal obligations owed to it and to defend itself from litigation. This is needed to ensure that the company’s legal rights and interests are managed appropriately.</td>
+        </tr>
+
+        <tr>
+            <td>(z)</td>
+            <td>To comply with lawful requests by public authorities (including without limitation to meet national security or law enforcement requirements), discovery requests, or where otherwise required or permitted by applicable laws, court orders, government regulations, or regulatory authorities (including without limitation data protection, tax and employment), whether within or outside your country;</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td class="blue"> Y</td>
+            <td>The Company considers it has a legitimate interest in ensuring that it complies with all legal requirements placed on it, whether those are EU or non-EU obligations. The Company wishes to maintain its reputation as a good corporate citizen and to act appropriately in all the countries in which it does business. This includes cooperating with authorities and government bodies. Indeed, the Company is required to comply with laws and regulations in those countries in which it does business and to require otherwise would lead to conflicts of laws issues.</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
